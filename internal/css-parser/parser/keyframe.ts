@@ -1,5 +1,6 @@
 import {CSSParser, Tokens} from "@internal/css-parser/types";
 import {
+	CSSIdentifier,
 	CSSKeyframe,
 	CSSKeyframeBlock,
 	CSSKeyframeName,
@@ -16,7 +17,7 @@ import {parseDeclarationBlock} from "@internal/css-parser/parser/declaration";
 const VALID_IDENTS = ["from", "to"];
 
 function parseKeyframeName(parser: CSSParser): CSSKeyframeName | undefined {
-	let value: CSSRaw | CSSString;
+	let value: CSSIdentifier | CSSString;
 	while (matchToken(parser, "Whitespace")) {
 		readToken(parser, "Whitespace");
 	}
@@ -57,7 +58,7 @@ function parseKeyframeName(parser: CSSParser): CSSKeyframeName | undefined {
 		value = parser.finishNode(
 			start,
 			{
-				type: "CSSRaw",
+				type: "CSSIdentifier",
 				value: token.value,
 			},
 		);
@@ -109,7 +110,7 @@ function parseKeyframeSelector(
 		);
 	} else {
 		parser.unexpectedDiagnostic({
-			description: descriptions.CSS_PARSER.UNKNOW_KEYFRAME_SELECTOR_NAME,
+			description: descriptions.CSS_PARSER.UNKNOWN_KEYFRAME_SELECTOR_NAME,
 			token: parser.getToken(),
 		});
 		nextToken(parser);

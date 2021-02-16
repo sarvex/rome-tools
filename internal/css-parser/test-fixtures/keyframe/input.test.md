@@ -19,7 +19,7 @@ CSSRoot {
 			loc: SourceLocation keyframe/input.css 1:0-7:1
 			block: CSSKeyframe {
 				name: CSSKeyframeName {
-					value: CSSRaw {
+					value: CSSIdentifier {
 						value: "foo"
 						loc: SourceLocation keyframe/input.css 1:11-1:11
 					}
@@ -143,7 +143,7 @@ CSSRoot {
 			loc: SourceLocation keyframe/input.css 17:0-18:1
 			block: CSSKeyframe {
 				name: CSSKeyframeName {
-					value: CSSRaw {
+					value: CSSIdentifier {
 						value: "FOO"
 						loc: SourceLocation keyframe/input.css 17:11-17:11
 					}

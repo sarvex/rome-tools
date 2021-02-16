@@ -18,7 +18,7 @@ CSSRoot {
 			loc: SourceLocation invalid/keyfram-number/input.css 1:0-5:1
 			block: CSSKeyframe {
 				name: CSSKeyframeName {
-					value: CSSRaw {
+					value: CSSIdentifier {
 						value: "foo"
 						loc: SourceLocation invalid/keyfram-number/input.css 1:11-1:11
 					}
